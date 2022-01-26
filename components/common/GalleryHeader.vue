@@ -7,7 +7,7 @@
         :show-sidebar="showSidebar"
       >
         <button @click="openPageSidebar">
-          <img :src="parseStaticUrl(menuIcon)" alt="..." />
+          <img :src="parseStaticUrl(menuIcon)" alt="icon" />
         </button>
       </div>
       <div

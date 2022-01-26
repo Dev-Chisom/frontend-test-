@@ -2,13 +2,20 @@
   <aside class="gallery-dashboard-sidebar">
     <nav class="hide" mobile>
       <div class="gallery-dashboard-sidebar gallery-dashboard-sidebar__header">
-        <div class="title">
-          Hi Username
-        </div>
+        <div class="title">Hi Username</div>
       </div>
 
-      <div v-for="(section, index) in navSectionsArr" :key="index" class="nav-section" mobile>
-        <div v-if="section.title" class="nav-section-title" v-text="section.title || ''" />
+      <div
+        v-for="(section, index) in navSectionsArr"
+        :key="index"
+        class="nav-section"
+        mobile
+      >
+        <div
+          v-if="section.title"
+          class="nav-section-title"
+          v-text="section.title || ''"
+        />
         <ul>
           <li
             v-for="(nav, key) in section.navLinks || []"
@@ -31,8 +38,17 @@
     </nav>
 
     <nav class="desktop-view" desktop>
-      <div v-for="(section, index) in navSectionsArr" :key="index" class="nav-section" desktop>
-        <div v-if="section.title" class="nav-section-title" v-text="section.title || ''" />
+      <div
+        v-for="(section, index) in navSectionsArr"
+        :key="index"
+        class="nav-section"
+        desktop
+      >
+        <div
+          v-if="section.title"
+          class="nav-section-title"
+          v-text="section.title || ''"
+        />
         <ul>
           <li
             v-for="(nav, key) in section.navLinks || []"
@@ -57,44 +73,41 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 
 export default {
   computed: {
-    copyright () {
-      return `© Gallery ${new Date().getFullYear()}`;
-    },
-    navSectionsArr () {
+    navSectionsArr() {
       return [
         {
           title: null,
           navLinks: [
             {
-              link: '/gallery',
-              title: 'Home'
+              link: "/gallery",
+              title: "Home",
             },
             {
-              link: '/gallery',
-              title: 'Gallery'
+              link: "/gallery",
+              title: "Gallery",
             },
-             {
-              link: '/gallery',
-              title: 'Lorem'
+            {
+              link: "/gallery",
+              title: "Lorem",
             },
-             {
-              link: '/gallery',
-              title: 'Ipsum'
+            {
+              link: "/gallery",
+              title: "Ipsum",
             },
           ],
-        }
+        },
       ];
     },
   },
   methods: {
     ...mapActions({
-      closePageSidebar: 'page/closePageSidebar',
-    })
-  }
+      closePageSidebar: "page/closePageSidebar",
+    }),
+  },
 };
 </script>
 
@@ -106,29 +119,29 @@ export default {
   background: transparent;
 
   @include for-desktop-only {
-      height: 100%;
+    height: 100%;
   }
-  .hide{
+  .hide {
     @include for-desktop-only {
       display: none;
     }
   }
-  .desktop-view{
-      display: none;
-      @include for-desktop-only {
+  .desktop-view {
+    display: none;
+    @include for-desktop-only {
       display: block;
       padding-top: 1rem;
     }
   }
 
-& .title{
+  & .title {
     font-size: 1.25rem;
     line-height: 1.75rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-top: 1rem;
-}
+  }
   nav[mobile] {
     width: 100%;
     padding: 1rem;
@@ -155,21 +168,11 @@ export default {
             margin-bottom: 2px;
             text-decoration: none;
 
-            i,
             span {
               display: inline-block;
               height: 1.5rem;
               line-height: 25px;
-            }
-
-            i {
-              min-width: 1.5rem;
-              margin-right: 10px;
-              user-select: none;
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: 1.5rem 1.5rem;
-              object-fit: contain;
+              font-size: 1.4rem;
             }
 
             span:last-child {
@@ -177,6 +180,7 @@ export default {
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
+              font-size: 1.4rem;
             }
           }
 
@@ -187,10 +191,6 @@ export default {
               color: $dark;
               cursor: pointer;
               border-radius: 8px;
-
-              i {
-                filter: brightness(0%);
-              }
             }
 
             & + li {
@@ -236,21 +236,11 @@ export default {
             color: $grey-dark;
             margin: 0.25rem 1rem;
 
-            i,
             span {
               display: inline-block;
               height: 1.5rem;
               line-height: 25px;
-            }
-
-            i {
-              min-width: 1.5rem;
-              margin-right: 10px;
-              user-select: none;
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: 1.5rem 1.5rem;
-              object-fit: contain;
+              font-size:1.4rem;
             }
 
             span:last-child {
@@ -258,6 +248,7 @@ export default {
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
+              font-size:1.4rem;
             }
           }
 

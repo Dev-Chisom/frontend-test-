@@ -76,7 +76,7 @@ export default {
   &.active {
     display: flex;
     opacity: 1;
-    z-index: 1001;
+    z-index: 100001;
     .modal-overlay {
       background: rgba($dark, 0.55);
       position: fixed;
@@ -99,7 +99,7 @@ export default {
     }
     .modal-container {
       animation: slideDown 0.5s ease 1;
-      z-index: 11;
+      z-index: 100001;
     }
   }
   &.modal-sm {
