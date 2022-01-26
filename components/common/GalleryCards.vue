@@ -283,9 +283,16 @@ export default {
   components: {
     ImageModal,
   },
+  computed: {
+    users() {
+    return this.$store.state.users
+    }
+  },
+  mounted() {
+    this.$store.dispatch("getUsers");
+  },
   methods: {
     showModal() {
-      console.log("clicked");
       this.showImageModal = true;
     },
   },

@@ -1,5 +1,4 @@
-// import Users from '~/assets/data/users.json';
-const customData = require('~/assets/data/users.json');
+import Users from '~/assets/data/users.json';
 
 export const state = () => ({
     users: []

@@ -23,10 +23,10 @@ export default {
     GalleryLayout,
     GalleryCards
   },
-  layout: 'gallery',
   head: {
     title: 'Gallery'
-  }
+  },
+   middleware: ['auth'],
 };
 </script>
 

@@ -19,7 +19,27 @@ import OfflineNotice from '~/components/common/OfflineNotice';
 export default {
   components: {
     OfflineNotice
-  }
+  },
+
+  methods:{
+    storage(){
+       const isStorageSet = sessionStorage.getItem("p");
+
+    if (!JSON.parse(isStorageSet)) {
+      const login = {
+        username: "admin",
+        password: "123456",
+      };
+      sessionStorage.setItem("p", JSON.stringify(login));
+    }
+    }
+  },
+
+  
+  mounted() {  
+    this.storage();
+    console.log('lol');
+  },
 };
 </script>
 

@@ -22,7 +22,12 @@
           @focus="showInvalidFieldsError = true"
         />
       </div>
-      <button id="login-button" class="button block" type="submit" :disabled="invalidFields">
+      <button
+        id="login-button"
+        class="button block"
+        type="submit"
+        :disabled="invalidFields"
+      >
         {{ buttonText }}
       </button>
     </form>
@@ -30,39 +35,52 @@
 </template>
 
 <script>
-import InputText from '~/components/common/InputText';
+import InputText from "~/components/common/InputText";
 
 export default {
   components: {
     InputText,
   },
-  data () {
+  data() {
     return {
       loading: false,
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       showInvalidFieldsError: false,
     };
   },
   computed: {
-    invalidFields () {
+    invalidFields() {
       return !this.password.length;
     },
-    buttonText () {
-      return this.loading ? 'Signing in...' : 'Sign in';
-    }
-  }, methods: {
-    submitRequest(){
-      console.log('push')
-      this.$router.push('gallery')
-    }
-  }
+    buttonText() {
+      return this.loading ? "Signing in..." : "Sign in";
+    },
+  },
+
+  methods: {
+    submitRequest() {
+      const isStorageSet = sessionStorage.getItem("p");
+      if (
+        this.username === isStorageSet.username &&
+        this.password === isStorageSet.password
+      ) {
+        const loginUser = {
+          username: this.username,
+          password: this.password,
+        };
+        sessionStorage.setItem("savedUser", JSON.stringify(loginUser));
+        this.$router.push("gallery");
+      } else {
+        console.log("error");
+      }
+    },
+  },
 };
 </script>
 
 <style  lang="scss" scoped>
 .signin-form {
-
   &__error {
     color: $red;
   }
