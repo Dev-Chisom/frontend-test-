@@ -1,0 +1,41 @@
+.color {
+  &-dark-blue {
+    color: $dark-blue;
+  }
+  &-grey {
+    color: $grey !important;
+  }
+  &-dark-grey {
+    color: $dark-grey !important;
+  }
+  &-grey-dark {
+    color: $grey-dark !important;
+  }
+  &-dark {
+    color: $dark;
+  }
+  &-light {
+    color: $light;
+  }
+  &-red {
+    color: $red;
+  }
+  &-secondary {
+    color: $secondary;
+  }
+  &-pale-green {
+    color: $pale-green;
+  }
+}
+
+.bg {
+  &-grey-bg-lightest {
+    background-color: $grey-bg-lightest;
+  }
+  &-yellow {
+    background-color: $yellow;
+  }
+  &-primary {
+    background-color: $primary;
+  }
+}

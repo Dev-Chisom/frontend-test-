@@ -1,0 +1,31 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  &.mb-4 {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &.horizontal {
+    flex-direction: row;
+    justify-content: initial;
+    align-items: center;
+  }
+
+  label {
+    position: absolute;
+    background-color: $secondary;
+    color: $dark;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+}

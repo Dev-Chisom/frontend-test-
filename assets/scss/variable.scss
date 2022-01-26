@@ -1,0 +1,54 @@
+// HEX - Colors
+$light: #ffffff;
+$dark: #000000;
+$dark-blue: #007ace;
+$primary: #008CA9;
+$dark-primary: #024052;
+$red: #ff7266;
+$red-label: #eb5757;
+$green: #33cc66;
+$pale-green: #43AA8B;
+$yellow: #f7c974;
+$grey-dark: #979797;
+$grey: #666666;
+$grey-grey-dark:#484747;
+$grey-light: #c4c4c4;
+$grey-light-divide: #F5F5F5;
+$grey-border: #eaecee;
+$gray-dark-cyan: #818f90;
+$dark-grey: #212b36;
+$grey-bg: #D8D8D8;
+$grey-border-bottom: $grey-bg;
+$grey-bg-light: #E0E0E0;
+$grey-bg-lighter: #f2f2f2;
+$grey-bg-lightest: #f6f6f7;
+$secondary: #F1C34E;
+$dark-green: #7cab5b;
+$dark-orange: #d27555;
+$default-box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+$red-button: #ff4b55;
+$blue-info-notice-bg: #3474E0;
+$blue-info-notice-border: #E9F0FD;
+$dark-dark: #212B36;
+
+// RGBA - Colors
+$black-bg-rgba: rgba(0, 0, 0, 0.56);
+
+// Mixins
+@mixin for-phone-only {
+  @media screen and (max-device-width: 640px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-only {
+  @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-only {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
