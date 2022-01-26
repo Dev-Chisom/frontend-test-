@@ -28,14 +28,16 @@ export default {
   transition: background-color 0.3s ease-in-out;
 
   .page-container {
-    @apply relative;
+    position: relative;
 
     .main-content {
-      @apply w-full min-h-screen;
+      width: 100%;
+      min-height: 100vh
     }
 
     .page-content {
-      @apply p-6 z-10;
+      padding: 1.5rem;
+      z-index: 10;
       margin-top: 3.5rem;
       min-height: calc(100vh - 3.5rem);
     }

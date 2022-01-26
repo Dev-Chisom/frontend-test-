@@ -1,0 +1,37 @@
+* {
+    scrollbar-width: thin;
+  
+    &::-webkit-scrollbar-button,
+    &::-webkit-scrollbar-corner,
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-track-piece {
+      display: none;
+    }
+  
+    &::-webkit-scrollbar {
+      width: 4px !important;
+      height: 4px !important;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-thumb {
+      overflow: visible;
+      border-radius: 4px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,.25);
+    }
+  
+    .dark-mode {
+  
+      &::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,.5);
+      }
+    }
+  }
+  

@@ -1,5 +1,5 @@
 <template>
-  <div class="vera-text-input" :class="inverted ? 'inverted' : ''">
+  <div class="gallery-text-input" :class="inverted ? 'inverted' : ''">
     <input
       :id="idName"
       :type="computedType"
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'VeraInputText',
+  name: 'InputText',
   props: {
     value: {
       type: String,
@@ -119,7 +119,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.vera-text-input {
+.gallery-text-input {
   display: flex;
   position: relative;
   flex-flow: column-reverse;

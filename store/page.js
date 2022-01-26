@@ -20,7 +20,7 @@ export const actions = {
     const { page } = rootState;
     const { showPageSidebar } = page;
     commit('setShowPageSidebar', !showPageSidebar);
-  }
+  },
 };
 
 export const getters = {

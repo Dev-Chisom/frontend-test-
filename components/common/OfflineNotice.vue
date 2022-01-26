@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-yellow color-dark p-4 text-xl text-center" style="z-index: 99999;">
+  <div class="offline">
     You appear to be offline. Please check your internet connection
   </div>
 </template>
@@ -9,11 +9,13 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.color-dark {
-    color: $dark;
-  }
-  bg-yellow {
+ .offline {
     background-color: #f7c974;
+     color: $dark;
+     padding: 1rem;
+     font-size: 1.25rem;
+     text-align: center;
+     z-index: 10000;
 }
 
 
