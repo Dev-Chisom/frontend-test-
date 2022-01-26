@@ -60,7 +60,7 @@ export default {
 
   methods: {
     submitRequest() {
-      const isStorageSet = sessionStorage.getItem("p");
+      const isStorageSet = JSON.parse(sessionStorage.getItem("p"));
       if (
         this.username === isStorageSet.username &&
         this.password === isStorageSet.password
@@ -70,7 +70,7 @@ export default {
           password: this.password,
         };
         sessionStorage.setItem("savedUser", JSON.stringify(loginUser));
-        this.$router.push("gallery");
+        this.$router.push("/gallery");
       } else {
         console.log("error");
       }

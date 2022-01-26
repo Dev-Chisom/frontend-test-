@@ -1,6 +1,6 @@
 <template>
   <div class="auth-layout">
-    <div class="sticky top-0" style="z-index: 999;">
+    <div class="sticky top-0" style="z-index: 999">
       <OfflineNotice v-if="$nuxt.isOffline" />
     </div>
     <div class="page-container">
@@ -14,31 +14,33 @@
 </template>
 
 <script>
-import OfflineNotice from '~/components/common/OfflineNotice';
+import OfflineNotice from "~/components/common/OfflineNotice";
 
 export default {
   components: {
-    OfflineNotice
+    OfflineNotice,
   },
 
-  methods:{
-    storage(){
-       const isStorageSet = sessionStorage.getItem("p");
+  methods: {
+    storage() {
+      if (process.client) {
+        console.log(process.client);
+        const isStorageSet = sessionStorage.getItem("p");
 
-    if (!JSON.parse(isStorageSet)) {
-      const login = {
-        username: "admin",
-        password: "123456",
-      };
-      sessionStorage.setItem("p", JSON.stringify(login));
-    }
-    }
+        if (!JSON.parse(isStorageSet)) {
+          const login = {
+            username: "admin",
+            password: "123456",
+          };
+          sessionStorage.setItem("p", JSON.stringify(login));
+        }
+      }
+    },
   },
 
-  
-  mounted() {  
+  created() {
     this.storage();
-    console.log('lol');
+    console.log("lol");
   },
 };
 </script>
@@ -52,7 +54,7 @@ export default {
 
     .main-content {
       width: 100%;
-      min-height: 100vh
+      min-height: 100vh;
     }
 
     .page-content {
@@ -71,7 +73,7 @@ export default {
 
     &__title {
       font-weight: 600;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       text-align: center;
       font-size: 1.5rem;
       line-height: 2rem;
