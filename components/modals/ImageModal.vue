@@ -95,6 +95,13 @@ export default {
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 0.6rem;
+
+    
+  @include for-phone-only {
+    
+    font-size: .8rem;
+    margin-bottom: 0.4rem;
+  }
   }
   &-image {
     width: 50%;
@@ -104,6 +111,11 @@ export default {
   .icon {
     width: 1.4rem;
     height: 1.4rem;
+
+    @include for-phone-only {
+    width: 1rem;
+    height: 1rem;
+  }
   }
   .circle {
     width: 2rem;
@@ -115,6 +127,11 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+
+       @include for-phone-only {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
   }
 }
 </style>
