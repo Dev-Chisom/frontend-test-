@@ -1,5 +1,12 @@
 # frontend-test
 
+# Tech Tools
+Nuxt
+Scss
+
+#About Project
+Image Gallery
+
 ## Build Setup
 
 ```bash
