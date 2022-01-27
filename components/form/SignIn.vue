@@ -61,8 +61,9 @@ export default {
   methods: {
     submitRequest() {
       const isStorageSet = JSON.parse(sessionStorage.getItem("storedData"));
+      console.log(this.username.toLowerCase())
       if (
-        this.username === isStorageSet.username &&
+        this.username.toLowerCase() === isStorageSet.username &&
         this.password === isStorageSet.password
       ) {
         const loginUser = {
