@@ -24,15 +24,14 @@ export default {
   methods: {
     storage() {
       if (process.client) {
-        console.log(process.client);
-        const isStorageSet = sessionStorage.getItem("p");
+        const isStorageSet = sessionStorage.getItem("storedData");
 
         if (!JSON.parse(isStorageSet)) {
           const login = {
             username: "admin",
             password: "123456",
           };
-          sessionStorage.setItem("p", JSON.stringify(login));
+          sessionStorage.setItem("storedData", JSON.stringify(login));
         }
       }
     },

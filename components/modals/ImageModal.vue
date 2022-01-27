@@ -2,7 +2,7 @@
   <Modal title="User Name" class="add-address-modal" @close="closeModal">
     <div class="card__tile">
       <img
-        src="https://i.imgur.com/2DhmtJ4.jpg"
+        :src="user.image"
         class="card__tile-image"
         alt=""
       />
@@ -15,47 +15,47 @@
               class="icon"
             />
           </span>
-          <span class="card__tile-text">Lorem Ipsum</span>
+          <span class="card__tile-text">{{ user.name }}</span>
         </p>
         <p>
           <span class="circle">
-          <img
-            :src="parseStaticUrl('/svg/email.svg')"
-            alt="email"
-            class="icon"
-          />
+            <img
+              :src="parseStaticUrl('/svg/email.svg')"
+              alt="email"
+              class="icon"
+            />
           </span>
-          <span class="card__tile-text">Lorem Ipsum</span>
+          <span class="card__tile-text">{{ user.email }}</span>
         </p>
         <p>
           <span class="circle">
-          <img
-            :src="parseStaticUrl('/svg/phone.svg')"
-            alt="phone"
-            class="icon"
-          />
+            <img
+              :src="parseStaticUrl('/svg/phone.svg')"
+              alt="phone"
+              class="icon"
+            />
           </span>
-          <span class="card__tile-text">Lorem Ipsum</span>
+          <span class="card__tile-text">{{ user.phone }}</span>
         </p>
         <p>
           <span class="circle">
-          <img
-            :src="parseStaticUrl('/svg/location.svg')"
-            alt="location"
-            class="icon"
-          />
+            <img
+              :src="parseStaticUrl('/svg/location.svg')"
+              alt="location"
+              class="icon"
+            />
           </span>
-          <span class="card__tile-text">Lorem Ipsum</span>
+          <span class="card__tile-text">{{ user.address.street }} {{ user.address.city }}</span>
         </p>
         <p>
-           <span class="circle">
-          <img
-            :src="parseStaticUrl('/svg/website.svg')"
-            alt="website"
-            class="icon"
-          />
-           </span>
-          <span class="card__tile-text">Lorem Ipsum</span>
+          <span class="circle">
+            <img
+              :src="parseStaticUrl('/svg/website.svg')"
+              alt="website"
+              class="icon"
+            />
+          </span>
+          <span class="card__tile-text">{{ user.website }}</span>
         </p>
       </div>
     </div>
@@ -65,6 +65,12 @@
 <script>
 import Modal from "~/components/modals/Modal";
 export default {
+  props: {
+    user: {
+      type: Object,
+      required: true,
+    },
+  },
   components: {
     Modal,
   },

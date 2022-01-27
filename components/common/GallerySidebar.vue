@@ -69,6 +69,14 @@
         </ul>
       </div>
     </nav>
+
+    <button class="bottom" @click="logOutUser">
+      <img
+        :src="parseStaticUrl('/svg/logout.svg')"
+        alt="user"
+        class="icon"
+      /><span>Admin</span>
+    </button>
   </aside>
 </template>
 
@@ -107,6 +115,9 @@ export default {
     ...mapActions({
       closePageSidebar: "page/closePageSidebar",
     }),
+    logOutUser(){
+      sessionStorage.removeItem("savedUser");
+    }
   },
 };
 </script>
@@ -117,6 +128,11 @@ export default {
   display: flex;
   flex-direction: column;
   background: transparent;
+
+  .icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 
   @include for-desktop-only {
     height: 100%;
@@ -240,7 +256,7 @@ export default {
               display: inline-block;
               height: 1.5rem;
               line-height: 25px;
-              font-size:1.4rem;
+              font-size: 1.4rem;
             }
 
             span:last-child {
@@ -248,7 +264,7 @@ export default {
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
-              font-size:1.4rem;
+              font-size: 1.4rem;
             }
           }
 
@@ -271,6 +287,33 @@ export default {
           }
         }
       }
+    }
+  }
+  button{   
+    outline: none;
+    cursor: pointer;
+    border: 0;
+  }
+
+  .bottom {
+    display:flex;
+    align-items: center;
+    margin: 0.25rem 2rem;
+    position: sticky;
+    bottom: 0px;
+    padding: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    background-color: #f6f6f7;
+    color: #666;
+
+    span {
+      color: #979797;
+      transition: all ease 0.25s;
+      outline: none;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: 1.4rem;
     }
   }
 }

@@ -1,5 +1,3 @@
-import Users from '~/assets/data/users.json';
-
 export const state = () => ({
     users: []
   });
@@ -13,10 +11,9 @@ export const state = () => ({
 
   export const actions = {
     getUsers({ commit }) {
-        axios.get('/users.json')
+        this.$axios.$get('/users.json')
             .then(response => {
-                console.log(response, 'hi')
-                commit('SET_USERS', response.data)
+                commit('SET_USERS', response)
         })
     }
   };

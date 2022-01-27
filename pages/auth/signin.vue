@@ -23,7 +23,6 @@ export default {
   head: {
     title: 'Sign in'
   },
-  middleware: ['auth'],
 };
 </script>
 

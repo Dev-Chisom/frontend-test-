@@ -60,7 +60,7 @@ export default {
 
   methods: {
     submitRequest() {
-      const isStorageSet = JSON.parse(sessionStorage.getItem("p"));
+      const isStorageSet = JSON.parse(sessionStorage.getItem("storedData"));
       if (
         this.username === isStorageSet.username &&
         this.password === isStorageSet.password
@@ -72,7 +72,7 @@ export default {
         sessionStorage.setItem("savedUser", JSON.stringify(loginUser));
         this.$router.push("/gallery");
       } else {
-        console.log("error");
+        alert("User Info Not Correct");
       }
     },
   },
